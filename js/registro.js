@@ -1,6 +1,20 @@
 const registroForm = document.getElementById('registroForm');
 const accountBtn = document.getElementById('accountBtn');
 
+// Auto-ajustar altura del textarea de habilidades
+const textareaHabilidades = document.getElementById('habilidades');
+if (textareaHabilidades) {
+  // Ajustar altura al cargar la página (por si hay contenido previo)
+  textareaHabilidades.style.height = 'auto';
+  textareaHabilidades.style.height = (textareaHabilidades.scrollHeight) + 'px';
+  
+  // Ajustar altura cuando el usuario escribe
+  textareaHabilidades.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });
+}
+
 // Validar RUT
 function validarRUT(rut) {
   rut = rut.replace(/[^\dk]/gi, '');

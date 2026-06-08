@@ -103,6 +103,14 @@
   appearance: none;
 }
 
+/* Auto-resize textarea */
+.form-group textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  line-height: 1.5;
+}
+
 .checkbox-group {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
