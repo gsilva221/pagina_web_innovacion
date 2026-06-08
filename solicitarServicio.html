@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexovocacional | Solicitar Servicio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/solicitarServicio.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">Nexovocacional</a>
+      </div>
+      <nav class="navbar-menu">
+        <a href="index.html#inicio" class="nav-link">Inicio</a>
+        <a href="index.html#beneficios" class="nav-link">Beneficios</a>
+        <a href="index.html#impacto" class="nav-link">Impacto</a>
+        <a href="index.html#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="navbar-account">
+        <button id="accountBtn" class="account-btn" title="Mi cuenta">👤</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="servicio-container">
+    <div class="servicio-wrapper">
+      <div class="servicio-header">
+        <h1>Solicita una Reunión de Asesoría</h1>
+        <p>Completa este formulario para que nuestros expertos en vocación se pongan en contacto contigo</p>
+      </div>
+
+      <form id="solicitarServicioForm" class="servicio-form">
+        
+        <!-- Información Personal -->
+        <fieldset class="form-section">
+          <legend>Información Personal</legend>
+          
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" placeholder="tunombre@correo.com" required>
+            </div>
+            <div class="form-group">
+              <label for="rut">RUT (sin puntos ni guión) *</label>
+              <input type="text" id="rut" name="rut" placeholder="12345678" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Información de Carrera -->
+        <fieldset class="form-section">
+          <legend>Información de Carrera</legend>
+          
+          <div class="form-group">
+            <label for="carrera">Tipo de carrera que estudias *</label>
+            <select id="carrera" name="carrera" required>
+              <option value="">Selecciona una opción</option>
+              <option value="tecnologia">Tecnología e Informática</option>
+              <option value="salud">Salud y Ciencias Médicas</option>
+              <option value="negocios">Negocios y Administración</option>
+              <option value="ingenieria">Ingeniería</option>
+              <option value="artes">Artes y Diseño</option>
+              <option value="educacion">Educación y Pedagogía</option>
+              <option value="derecho">Derecho y Ciencias Sociales</option>
+              <option value="otros">Otras Carreras</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="institucion">Institución educativa (opcional)</label>
+            <input type="text" id="institucion" name="institucion" placeholder="Nombre de tu universidad o instituto">
+          </div>
+        </fieldset>
+
+        <!-- Preferencia de Reunión -->
+        <fieldset class="form-section">
+          <legend>Preferencia de Reunión</legend>
+          
+          <div class="form-group">
+            <label for="fecha">¿Cuándo te gustaría tener la reunión? *</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+
+          <div class="form-group">
+            <label>Selecciona tu horario preferido *</label>
+            <div class="horario-group">
+              <label class="horario-label">
+                <input type="radio" name="horario" value="manana" required>
+                <span>Mañana (09:00 - 12:00)</span>
+              </label>
+              <label class="horario-label">
+                <input type="radio" name="horario" value="tarde">
+                <span>Tarde (14:00 - 18:00)</span>
+              </label>
+              <label class="horario-label">
+                <input type="radio" name="horario" value="flexible">
+                <span>Flexible (a convenir)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comentarios">Comentarios adicionales (opcional)</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Cuéntanos si tienes dudas específicas o algo que debamos saber..." rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Consentimiento -->
+        <fieldset class="form-section">
+          <legend>Consentimiento</legend>
+          
+          <label class="checkbox-label full">
+            <input type="checkbox" name="privacidad" required>
+            <span>Autorizo a Nexovocacional a contactarme según mis datos proporcionados *</span>
+          </label>
+          
+          <label class="checkbox-label full">
+            <input type="checkbox" name="marketing">
+            <span>Deseo recibir información sobre servicios y promociones de Nexovocacional</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Solicitar Reunión</button>
+        <p class="form-info">* Campos obligatorios</p>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/solicitarServicio.js"></script>
+</body>
+</html>

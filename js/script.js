@@ -1,5 +1,4 @@
 const registerModal = document.getElementById('registerModal');
-    const registerForm = document.getElementById('registerForm');
     const officialPage = document.getElementById('officialPage');
     const openRegister = document.getElementById('openRegister');
     const accountBtn = document.getElementById('accountBtn');
@@ -12,34 +11,22 @@ const registerModal = document.getElementById('registerModal');
       registerModal.classList.remove('hide');
     });
 
-    // Abrir modal desde botón de cuenta
+    // Ir a registro desde botón de cuenta
     accountBtn.addEventListener('click', () => {
-      registerModal.classList.remove('hide');
+      // Verificar si hay usuario registrado en localStorage
+      const datosEstudiante = localStorage.getItem('datosEstudiante');
+      if (datosEstudiante) {
+        const datos = JSON.parse(datosEstudiante);
+        alert(`Bienvenido de vuelta, ${datos.nombre}!`);
+      } else {
+        window.location.href = 'registro.html';
+      }
     });
 
     // Cerrar modal al hacer clic fuera
     registerModal.addEventListener('click', (e) => {
       if (e.target === registerModal) {
         registerModal.classList.add('hide');
-      }
-    });
-
-    registerForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const formData = new FormData(registerForm);
-      const name = formData.get('name').trim();
-      const email = formData.get('email').trim();
-      const phone = formData.get('phone').trim();
-
-      if (!name || !email || !phone) {
-        alert('Por favor, completa todos los campos para continuar.');
-        return;
-      }
-
-      registerModal.classList.add('hide');
-      const heading = document.querySelector('main h2');
-      if (heading) {
-        heading.textContent = `Bienvenido ${name} a Nexovocacional`;
       }
     });
 
