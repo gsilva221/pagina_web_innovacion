@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexovocacional | Inscripción Obligatoria</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="hero">
+    <div class="brand">
+      <h1>Nexovocacional: tu futuro, nuestro motor</h1>
+      <p>Accede a un mundo de oportunidades con la plataforma vocacional más efectiva de Chile. Regístrate ahora y descubre beneficios exclusivos, datos comprobados y servicios de acompañamiento 100% personalizados.</p>
+      <button class="register-btn" id="openRegister">Iniciar inscripción</button>
+    </div>
+  </div>
+
+  <div class="register-modal" id="registerModal">
+    <div class="register-card">
+      <h2>Regístrate para continuar</h2>
+      <p>Es obligatorio registrarse para acceder a la página oficial de Nexovocacional y conocer todos nuestros beneficios.</p>
+      <form id="registerForm">
+        <label>
+          Nombre completo
+          <input type="text" name="name" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Correo electrónico
+          <input type="email" name="email" placeholder="tunombre@correo.com" required>
+        </label>
+        <label>
+          Teléfono o WhatsApp
+          <input type="tel" name="phone" placeholder="+56 9 1234 5678" required>
+        </label>
+        <button type="submit" class="submit-btn">Acceder a Nexovocacional</button>
+      </form>
+      <small>Al registrarte, serás redirigido de inmediato a nuestra presentación oficial de beneficios y servicios.</small>
+    </div>
+  </div>
+
+  <main id="officialPage">
+    <section class="section">
+      <h2>Bienvenido a la página oficial de Nexovocacional</h2>
+      <p>Nexovocacional transforma la búsqueda vocacional en una experiencia inteligente, confiable y efectiva. Nuestra plataforma guía a estudiantes y profesionales en Chile para encontrar el mejor camino con alto impacto en rendimiento académico y satisfacción personal.</p>
+      <div class="badge-group">
+        <div class="badge">
+          <h3>95% de satisfacción</h3>
+          <p>El 95% de quienes usan Nexovocacional siente mayor seguridad en su decisión de carrera y recibe acompañamiento permanente.</p>
+        </div>
+        <div class="badge">
+          <h3>87% de efectividad</h3>
+          <p>El 87% de nuestros usuarios encuentra una opción vocacional válida en menos de 21 días luego de registrarse.</p>
+        </div>
+        <div class="badge">
+          <h3>100% cobertura nacional</h3>
+          <p>Prestamos servicios en todo Chile. Nuestra red digital permite acompañar a jóvenes desde Arica hasta Punta Arenas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Beneficios destacados</h2>
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <h3>Asesoría personalizada</h3>
+          <p>Recibe evaluaciones detalladas de habilidades, tests vocacionales y recomendaciones adaptadas a tu perfil profesional y emocional.</p>
+        </article>
+        <article class="benefit-card">
+          <h3>Seguimiento continuo</h3>
+          <p>Nuestros expertos monitorean tu progreso, mantienen reuniones periódicas y ajustan tu plan de carrera en tiempo real.</p>
+        </article>
+        <article class="benefit-card">
+          <h3>Conexión con instituciones</h3>
+          <p>Accede a alianzas exclusivas con universidades, institutos y empresas que confían en nuestra plataforma vocacional.</p>
+        </article>
+        <article class="benefit-card">
+          <h3>Material premium</h3>
+          <p>Obtén guías, simuladores y recursos exclusivos para preparar tu postulación académica o profesional con ventaja competitiva.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Impacto medible</h2>
+      <p>En Nexovocacional nos apoyamos en datos reales. Cada recomendación es construida a partir de algoritmos, coaching humano y análisis de perfiles que garantizan decisiones con alto grado de certeza.</p>
+      <div class="badge-group">
+        <div class="badge">
+          <h3>4.8/5</h3>
+          <p>Calificación promedio de los usuarios que recomiendan Nexovocacional a familiares y amigos.</p>
+        </div>
+        <div class="badge">
+          <h3>92% retención</h3>
+          <p>De las personas que comienzan nuestro proceso, el 92% completa todas las etapas del acompañamiento.</p>
+        </div>
+        <div class="badge">
+          <h3>+1.200 casos</h3>
+          <p>Casos resueltos con estrategias de elección vocacional y planificación de carrera en los últimos 12 meses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="map-panel">
+        <svg viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de Chile">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4ea6ff" />
+              <stop offset="100%" stop-color="#7f3cff" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="360" height="640" rx="36" fill="#061122" />
+          <path d="M160 20c28 10 34 38 42 62 8 23 15 40 12 60-3 18-10 22-22 28-12 5-18 14-22 28-5 16-2 36 6 52 7 13 15 22 18 38 4 22-4 43-8 64-4 18-2 42 0 62 2 24-2 54-4 80-3 27-4 58-2 84 2 20 6 45 1 66-5 19-19 36-34 51-14 13-28 25-47 28-10 2-21 0-30-3-9-4-18-11-23-19-6-8-9-18-11-27-4-25-2-52 2-78 4-32 10-67 14-99 3-27 3-50 0-67-3-16-8-28-20-35-13-8-33-8-49-4-19 5-39 10-58 10-11 0-20-1-28-7-9-8-11-22-9-34 3-25 15-47 30-68 16-20 36-38 56-54 13-10 28-20 44-27 18-9 40-11 60-14 25-4 52-10 76-10 20 0 44 4 63 12z" fill="url(#grad)" filter="drop-shadow(0 20px 40px rgba(0,0,0,0.35))" />
+          <circle cx="270" cy="460" r="34" fill="#ff9b3d" opacity="0.9" />
+          <text x="178" y="110" fill="#e5f2ff" font-size="20" font-weight="700">NEXOVOCACIONAL</text>
+          <text x="178" y="140" fill="#b0d9ff" font-size="16">Todo Chile</text>
+        </svg>
+        <div class="map-copy">
+          <h3>Servicio nacional en todo Chile</h3>
+          <ul>
+            <li>Atención digital para todas las regiones, desde Arica hasta Magallanes.</li>
+            <li>Reuniones virtuales de alta calidad y seguimiento sin importar tu ubicación.</li>
+            <li>Soporte telefónico y por correo para cada etapa del proceso vocacional.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Activa tu proceso hoy</h2>
+      <p>Tu futuro no espera. Reserva una reunión con nuestros expertos o envía tu consulta directamente a nuestro equipo. Te respondemos con un plan personalizado para comenzar inmediatamente.</p>
+      <div class="actions">
+        <a class="primary" href="mailto:contacto.nexovocacional@gmail.com?subject=Quiero%20una%20reuni%C3%B3n%20Nexovocacional&body=Hola%20Nexovocacional,%20quiero%20agendar%20una%20reuni%C3%B3n%20para%20conocer%20los%20servicios.">Solicitar reunión</a>
+        <a class="secondary" href="mailto:servicios.nexovocacional@gmail.com?subject=Ingresar%20a%20servicios%20Nexovocacional&body=Hola,%20quiero%20acceder%20a%20los%20servicios%20de%20Nexovocacional.">Acceder a servicios</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
