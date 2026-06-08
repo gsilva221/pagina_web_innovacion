@@ -480,6 +480,12 @@ html {
       letter-spacing: -0.03em;
     }
 
+    #casosReales {
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
     .section p {
       color: #d4e0ff;
       line-height: 1.9;
@@ -550,15 +556,21 @@ html {
       display: flex;
       gap: 1.5rem;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0 1rem;
     }
 
     .map-panel svg {
       width: 100%;
       height: auto;
+      max-width: 450px;
+      min-width: 250px;
       border-radius: 30px;
       box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
       background: linear-gradient(180deg, rgba(5,32,70,0.88), rgba(7,15,28,0.98));
-      flex: 1.2;
+      flex: 1 1 auto;
+      object-fit: contain;
     }
 
     .map-panel .map-copy {
@@ -657,11 +669,23 @@ html {
       }
 
       .map-panel {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        padding: 0;
+      }
+
+      .map-panel svg {
+        max-width: 420px;
       }
     }
 
     @media (max-width: 640px) {
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .section {
+        padding: 2.5rem 1.2rem;
+      }
+
       .hero-content {
         flex-direction: column;
       }
@@ -691,13 +715,43 @@ html {
         right: -30px;
         top: 40px;
       }
+
+      .map-panel {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .map-panel svg {
+        max-width: 350px;
+        width: 100%;
+      }
+
+      .map-panel .map-copy {
+        width: 100%;
+        text-align: center;
+      }
     }
 
-    @media (max-width: 640px) {
-      .hero {
-        padding: 2rem 1.2rem;
+    @media (max-width: 480px) {
+      .map-panel {
+        padding: 0;
       }
-      .section {
-        padding: 2.5rem 1.2rem;
+
+      .map-panel svg {
+        max-width: 280px;
+        min-width: 200px;
+      }
+
+      .map-panel .map-copy {
+        padding: 0 0.5rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .map-panel svg {
+        max-width: 100%;
+        min-width: 100%;
       }
     }
