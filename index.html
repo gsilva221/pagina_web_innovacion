@@ -8,7 +8,24 @@
 
 </head>
 <body>
-  <div class="hero">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <span>Nexovocacional</span>
+      </div>
+      <nav class="navbar-menu">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#impacto" class="nav-link">Impacto</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="navbar-account">
+        <button id="accountBtn" class="account-btn" title="Mi cuenta">👤</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero" id="inicio">
     <div class="brand">
       <h1>Nexovocacional: tu futuro, nuestro motor</h1>
       <p>Accede a un mundo de oportunidades con la plataforma vocacional más efectiva de Chile. Regístrate ahora y descubre beneficios exclusivos, datos comprobados y servicios de acompañamiento 100% personalizados.</p>
@@ -16,10 +33,10 @@
     </div>
   </div>
 
-  <div class="register-modal" id="registerModal">
+  <div class="register-modal hide" id="registerModal">
     <div class="register-card">
-      <h2>Regístrate para continuar</h2>
-      <p>Es obligatorio registrarse para acceder a la página oficial de Nexovocacional y conocer todos nuestros beneficios.</p>
+      <h2>Acceso a servicios premium</h2>
+      <p>Completa tu registro para acceder a asesoría personalizada, seguimiento continuo y material exclusivo de Nexovocacional.</p>
       <form id="registerForm">
         <label>
           Nombre completo
@@ -59,7 +76,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="beneficios">
       <h2>Beneficios destacados</h2>
       <div class="benefits-grid">
         <article class="benefit-card">
@@ -81,7 +98,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="impacto">
       <h2>Impacto medible</h2>
       <p>En Nexovocacional nos apoyamos en datos reales. Cada recomendación es construida a partir de algoritmos, coaching humano y análisis de perfiles que garantizan decisiones con alto grado de certeza.</p>
       <div class="badge-group">
@@ -126,7 +143,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="contacto">
       <h2>Activa tu proceso hoy</h2>
       <p>Tu futuro no espera. Reserva una reunión con nuestros expertos o envía tu consulta directamente a nuestro equipo. Te respondemos con un plan personalizado para comenzar inmediatamente.</p>
       <div class="actions">

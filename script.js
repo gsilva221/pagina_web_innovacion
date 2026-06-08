@@ -2,9 +2,26 @@ const registerModal = document.getElementById('registerModal');
     const registerForm = document.getElementById('registerForm');
     const officialPage = document.getElementById('officialPage');
     const openRegister = document.getElementById('openRegister');
+    const accountBtn = document.getElementById('accountBtn');
 
+    // Mostrar la página oficial por defecto (registro opcional)
+    officialPage.classList.add('active');
+
+    // Abrir modal desde botón de inscripción
     openRegister.addEventListener('click', () => {
       registerModal.classList.remove('hide');
+    });
+
+    // Abrir modal desde botón de cuenta
+    accountBtn.addEventListener('click', () => {
+      registerModal.classList.remove('hide');
+    });
+
+    // Cerrar modal al hacer clic fuera
+    registerModal.addEventListener('click', (e) => {
+      if (e.target === registerModal) {
+        registerModal.classList.add('hide');
+      }
     });
 
     registerForm.addEventListener('submit', event => {
@@ -20,11 +37,9 @@ const registerModal = document.getElementById('registerModal');
       }
 
       registerModal.classList.add('hide');
-      officialPage.classList.add('active');
-      window.location.hash = 'oficial';
       const heading = document.querySelector('main h2');
       if (heading) {
-        heading.textContent = `Bienvenido ${name} a la página oficial de Nexovocacional`;
+        heading.textContent = `Bienvenido ${name} a Nexovocacional`;
       }
     });
 
