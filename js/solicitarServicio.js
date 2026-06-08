@@ -23,13 +23,12 @@ function validarRUT(rut) {
          digito.toString() === digitoVerificador;
 }
 
-// Validar fecha mínima (no puede ser en el pasado)
-function validarFecha(fecha) {
-  const fechaSeleccionada = new Date(fecha);
-  const hoy = new Date();
-  hoy.setHours(0, 0, 0, 0);
+// Validar fecha y hora mínimas (no puede ser en el pasado)
+function validarFechaHora(fechaHora) {
+  const fechaSeleccionada = new Date(fechaHora);
+  const ahora = new Date();
   
-  return fechaSeleccionada >= hoy;
+  return fechaSeleccionada > ahora;
 }
 
 // Manejar envío del formulario
@@ -40,12 +39,11 @@ solicitarServicioForm.addEventListener('submit', (e) => {
   const email = document.getElementById('email').value.trim();
   const rut = document.getElementById('rut').value.trim();
   const carrera = document.getElementById('carrera').value;
-  const fecha = document.getElementById('fecha').value;
-  const horario = document.querySelector('input[name="horario"]:checked');
+  const fechaHora = document.getElementById('fechaHora').value;
   const privacidad = document.getElementById('privacidad').checked;
   
   // Validaciones
-  if (!nombre || !email || !rut || !carrera || !fecha || !horario) {
+  if (!nombre || !email || !rut || !carrera || !fechaHora) {
     alert('Por favor, completa todos los campos obligatorios.');
     return;
   }
@@ -55,8 +53,8 @@ solicitarServicioForm.addEventListener('submit', (e) => {
     return;
   }
   
-  if (!validarFecha(fecha)) {
-    alert('La fecha debe ser igual o posterior a hoy.');
+  if (!validarFechaHora(fechaHora)) {
+    alert('La fecha y hora debe ser posterior a la actual.');
     return;
   }
   
@@ -72,8 +70,7 @@ solicitarServicioForm.addEventListener('submit', (e) => {
     rut,
     carrera,
     institucion: document.getElementById('institucion').value || null,
-    fecha,
-    horario: horario.value,
+    fechaHora,
     comentarios: document.getElementById('comentarios').value || null,
     marketing: document.getElementById('marketing').checked,
     fechaSolicitud: new Date().toISOString()
@@ -84,8 +81,13 @@ solicitarServicioForm.addEventListener('submit', (e) => {
   solicitudes.push(datosServicio);
   localStorage.setItem('solicitudesServicio', JSON.stringify(solicitudes));
   
+  // Convertir a formato legible
+  const fechaObj = new Date(fechaHora);
+  const fechaFormato = fechaObj.toLocaleDateString('es-CL');
+  const horaFormato = fechaObj.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+  
   // Mensaje de éxito
-  alert(`¡Solicitud enviada con éxito!\n\nNombre: ${nombre}\nFecha de reunión: ${new Date(fecha).toLocaleDateString('es-CL')}\nHorario: ${horario.value}\n\nNos pondremos en contacto pronto en ${email}.`);
+  alert(`¡Solicitud enviada con éxito!\n\nNombre: ${nombre}\nFecha: ${fechaFormato}\nHora: ${horaFormato}\n\nNos pondremos en contacto pronto en ${email}.`);
   
   // Redirigir al inicio
   setTimeout(() => {
@@ -104,14 +106,22 @@ accountBtn.addEventListener('click', () => {
   }
 });
 
-// Establecer fecha mínima en el input de fecha
+// Establecer fecha y hora mínima en el input
 document.addEventListener('DOMContentLoaded', () => {
-  const fechaInput = document.getElementById('fecha');
-  const hoy = new Date();
-  const año = hoy.getFullYear();
-  const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-  const día = String(hoy.getDate()).padStart(2, '0');
-  const fechaHoy = `${año}-${mes}-${día}`;
+  const fechaHoraInput = document.getElementById('fechaHora');
+  const ahora = new Date();
   
-  fechaInput.min = fechaHoy;
+  // Agregar 30 minutos a la hora actual
+  ahora.setMinutes(ahora.getMinutes() + 30);
+  
+  const año = ahora.getFullYear();
+  const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+  const día = String(ahora.getDate()).padStart(2, '0');
+  const hora = String(ahora.getHours()).padStart(2, '0');
+  const minuto = String(ahora.getMinutes()).padStart(2, '0');
+  
+  const fechaHoraMinima = `${año}-${mes}-${día}T${hora}:${minuto}`;
+  
+  fechaHoraInput.min = fechaHoraMinima;
+  fechaHoraInput.value = fechaHoraMinima;
 });

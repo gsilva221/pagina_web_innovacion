@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexovocacional | Solicitar Servicio</title>
+  <title>Nexovocacional</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/solicitarServicio.css">
 </head>
@@ -85,26 +85,8 @@
           <legend>Preferencia de Reunión</legend>
           
           <div class="form-group">
-            <label for="fecha">¿Cuándo te gustaría tener la reunión? *</label>
-            <input type="date" id="fecha" name="fecha" required>
-          </div>
-
-          <div class="form-group">
-            <label>Selecciona tu horario preferido *</label>
-            <div class="horario-group">
-              <label class="horario-label">
-                <input type="radio" name="horario" value="manana" required>
-                <span>Mañana (09:00 - 12:00)</span>
-              </label>
-              <label class="horario-label">
-                <input type="radio" name="horario" value="tarde">
-                <span>Tarde (14:00 - 18:00)</span>
-              </label>
-              <label class="horario-label">
-                <input type="radio" name="horario" value="flexible">
-                <span>Flexible (a convenir)</span>
-              </label>
-            </div>
+            <label for="fechaHora">¿Cuándo te gustaría tener la reunión? *</label>
+            <input type="datetime-local" id="fechaHora" name="fechaHora" required>
           </div>
 
           <div class="form-group">
